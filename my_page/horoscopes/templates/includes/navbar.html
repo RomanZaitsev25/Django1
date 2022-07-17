@@ -1,0 +1,29 @@
+<nav>
+    <a href="{% url 'horoscope-index' %}">Главная</a>|
+    <a href="https://www.homeenglish.ru/OtherGoroscop.htm">Источник</a>
+    {% for zodiac in zodiacs %}
+    |<a href="{%url 'horoscope-name' sign_zodiac=zodiac %}">{{ zodiac|title }}</a>
+    {% endfor %}
+</nav>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<p>переменная sign - {{sign}}</p>-->
+<!--<p>переменная description_zodiacs = {{description_zodiacs}}</p>-->
+<!--<p>переменная description_zodiacs = {{description_zodiacs}}</p>-->
+<!--<p>переменная zodiacs = {{zodiacs}}</p>-->
+<!--<p>переменная a = {{a}}</p>-->
+<!--<p>переменная b = {{b}}</p>-->

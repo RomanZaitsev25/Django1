@@ -1,11 +1,60 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Гороскоп</title>
-</head>
-<body>
-    <h1>Приложение гороскоп</h1>
-    <h2>Близнецы - третий знак зодиака, планета Меркурий (с 22 мая по 21 июня)</h2>
-</body>
-</html>
+{% extends 'base.html' %}
+
+
+{% block title %}
+    Гороскоп для {{ sign|upper }}
+{% endblock %}
+
+{% block content %}
+    {% include 'includes/navbar.html' only with a=100 b=200 %}
+    <h2>Content from info_zodiac.html</h2>
+    {% if description_zodiacs is None %}
+        <h2>Неправильный знак зодиака - {{ sign|upper }}</h2>
+    {% else %}
+        <h2>{{description_zodiacs|title|safe}}</h2>
+    {% endif %}
+{% endblock %}
+
+
+
+
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Гороскоп для {{ sign|upper }}</title>-->
+<!--</head>-->
+<!--    <h1>Приложение гороскоп </h1>-->
+
+<!--    {% if description_zodiacs is None %}-->
+<!--        <h2>Неправильный знак зодиака - {{ sign|upper }}</h2>-->
+<!--    {% else %}-->
+<!--        <h2>{{description_zodiacs|title|safe}}</h2>-->
+<!--    {% endif %}-->
+
+<!--<body></body>-->
+<!--</html>-->
+
+
+
+<!--    {% if my_list|length >= 3 %}-->
+<!--        <h2>список из 3-х или более элементов - {{ my_list }}</h2>-->
+<!--    {% elif my_list|length >= 2 %}-->
+<!--        <h2>список из 2-х или более элементов - {{ my_list }}</h2>-->
+<!--    {% elif my_list|length >= 1 %}-->
+<!--        <h2>список из 1-х или более элементов - {{ my_list }}</h2>-->
+<!--    {% else %}-->
+<!--        <h2>список пустой - {{ my_list }}</h2>-->
+<!--    {% endif %}-->
+
+
+
+<!--&lt;!&ndash;    <h2>{{ description_zodiacs|title }}</h2>&ndash;&gt;-->
+<!--    <p>My float-{{ my_float }}</p>-->
+<!--    <p>My list-{{ my_list }}</p>-->
+<!--    <p>My tuple-{{ my_tuple|join:' , ' }}</p>-->
+<!--    <p>My disc-{{ my_dict }}</p>-->
+<!--    <p>My disc-{{ my_dict }}, ключ- {{ my_dict.name }}</p>-->
+<!--    <p>Экземпляр класса-{{ my_class }} {{ my_class.age }}</p>-->
+<!--    <p>default-{{ value|default:"qwerty" }}</p>-->
