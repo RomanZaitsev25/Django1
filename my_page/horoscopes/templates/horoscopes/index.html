@@ -12,14 +12,14 @@
 
 
 {% block content %}
-    {% include 'includes/navbar.html' only %}
-    <h2>Content from index.html</h2>
+<!--    {% include 'includes/navbar.html' only %}-->
+    <h1>Приложение гороскоп</h1>
     <ul>
         {% for zodiac in zodiacs %}
                 <li><a href="{%url 'horoscope-name' sign_zodiac=zodiac %}">{{ zodiac|title }}</a></li>
         {% endfor %}
     </ul>
-     {% include 'includes/navbar.html' %}
+<!--     {% include 'includes/navbar.html' %}-->
 {% endblock %}
 
 
