@@ -55,7 +55,8 @@ ROOT_URLCONF = 'my_page.urls'
 
 TEMPLATES = [
     # Dirs- список, указывать путь, где искать шаблоны. Пути абсолютные полный
-    # путь до папки шаблонов. BASE_DIR/'horoscope'/'templates'
+    # путь до папки шаблонов. BASE_DIR/'horoscope'/'templates'. Базовый шаблон
+    # что бы его видел джанго, нужно прописать путь в DIRS:BASE_DIR/'templates'
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
